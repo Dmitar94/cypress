@@ -1,0 +1,13 @@
+{
+   "Register": {
+    "firstNameInputField":"#first-name",
+    "lastNameInputField":"#last-name",
+    "emailInputField":"#email",
+    "passwordInputField":"#password",
+    "submitButton" :"button",
+    "createGalleryButton":"[href='/create']"
+
+
+   }
+
+}
