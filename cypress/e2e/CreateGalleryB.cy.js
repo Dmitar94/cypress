@@ -2,21 +2,23 @@
 
 describe("Create Gllery R", () => {
     beforeEach(()=>{
-    cy.request({
-            url: "https://gallery-api.vivifyideas.com/api/auth/login",
-            method: "POST",
-            body: {
-                email: "sremac1994@gmail.com",
-                password: "Dmitarsremcic1994",
-            },
-        }).its("body").then((resp) =>{
-            let respToken = resp.access_token;
-            let tokenType =resp.token_type;
-            expect(respToken).to.be.a("string");
-            expect(tokenType).eq("bearer");
+    // cy.request({
+    //         url: "https://gallery-api.vivifyideas.com/api/auth/login",
+    //         method: "POST",
+    //         body: {
+    //             email: "sremac1994@gmail.com",
+    //             password: "Dmitarsremcic1994",
+    //         },
+    //     }).its("body").then((resp) =>{
+    //         let respToken = resp.access_token;
+    //         let tokenType =resp.token_type;
+    //         expect(respToken).to.be.a("string");
+    //         expect(tokenType).eq("bearer");
 
-            window.localStorage.setItem("token",respToken);
-    })
+    //         window.localStorage.setItem("token",respToken);
+    // })
+
+    cy.login();
 
     })
     it("Succesfully create gallery with one image", () => {
